@@ -38,11 +38,17 @@ if ($num > 0) {
         // array_push($images_arr['data'], $post_item);
     }
 
+    $response = array(
+        'status' => 200,
+        'message' => 'Images Found',
+        'data' => $images_arr
+    );
+
     // Turn to JSON & output
-    echo json_encode($images_arr);
+    echo json_encode($response);
 } else {
     // No Images
     echo json_encode(
-        array('message' => 'No Images Found')
+        array('message' => 'No Images Found', 'status' => 404)
     );
 }

@@ -25,4 +25,10 @@ $images_arr = array(
     'created_at' => $image->created_at,
 );
 
-print_r(json_encode($images_arr));
+$response = array(
+    'status' => 200,
+    'message' => 'Image Found',
+    'data' => $images_arr
+);
+
+print_r(json_encode($response));
